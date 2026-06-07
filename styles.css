@@ -1150,3 +1150,68 @@ h3 {
     animation: none;
   }
 }
+
+
+/* Experience sections */
+
+.experience-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.experience-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+  padding: 1.35rem;
+}
+
+.experience-top {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: start;
+}
+
+.experience-org {
+  margin-top: 0.35rem;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-weight: 650;
+}
+
+.experience-date {
+  color: var(--blue);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.experience-location {
+  margin-top: 0.25rem;
+  margin-bottom: 0.9rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.experience-card ul {
+  margin: 0.85rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.experience-card li {
+  color: var(--muted);
+  margin-bottom: 0.45rem;
+}
+
+@media (max-width: 880px) {
+  .experience-top {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-date {
+    white-space: normal;
+  }
+}
