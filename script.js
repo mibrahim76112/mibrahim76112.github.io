@@ -279,6 +279,15 @@ const skills = [
   }
 ];
 
+const categoryClass = {
+  "Wireless Communication": "cat-wireless",
+  "Reinforcement Learning": "cat-rl",
+  "Computer Vision": "cat-cv",
+  "Robotics and Control": "cat-robotics",
+  "Embedded and Hardware": "cat-embedded",
+  "Networking and Software": "cat-software"
+};
+
 function createTags(tags) {
   return tags.map(tag => `<span class="tag">${tag}</span>`).join("");
 }
@@ -290,7 +299,7 @@ function renderResearch() {
       <h3>${item.title}</h3>
       <p>${item.description}</p>
       <div class="tags">${createTags(item.tags)}</div>
-      ${item.link ? `<div class="project-links"><a href="${item.link}" target="_blank" rel="noreferrer">GitHub</a></div>` : ""}
+      ${item.link ? `<a class="card-link" href="${item.link}" target="_blank" rel="noreferrer">View on GitHub</a>` : ""}
     </article>
   `).join("");
 }
@@ -300,19 +309,18 @@ function renderProjects(filter = "all") {
   const filtered = filter === "all" ? projects : projects.filter(project => project.category === filter);
 
   grid.innerHTML = filtered.map(project => `
-    <article class="project-card">
+    <article class="project-card ${categoryClass[project.category] || ""}${project.featured ? " featured" : ""}">
       <div>
         <h3>${project.title}</h3>
         <div class="project-meta">
-          <span class="meta-pill">${project.category}</span>
+          <span class="meta-pill cat">${project.category}</span>
           <span class="meta-pill">${project.date}</span>
-          ${project.featured ? `<span class="meta-pill">Featured</span>` : ""}
         </div>
         <p>${project.description}</p>
         <div class="tags">${createTags(project.tech)}</div>
       </div>
       <div class="project-links">
-        ${project.github ? `<a href="${project.github}" target="_blank" rel="noreferrer">GitHub</a>` : ""}
+        ${project.github ? `<a href="${project.github}" target="_blank" rel="noreferrer">View on GitHub</a>` : ""}
       </div>
     </article>
   `).join("");
@@ -324,10 +332,10 @@ function renderPublications() {
     <article class="publication-card">
       <div>
         <h3>${pub.title}</h3>
-        <p>${pub.authors}</p>
-        <p>${pub.venue}</p>
+        <p class="pub-authors">${pub.authors}</p>
+        <p class="pub-venue">${pub.venue}</p>
       </div>
-      <a href="${pub.link}" target="_blank" rel="noreferrer"><span>${pub.status}</span></a>
+      <a class="pub-link" href="${pub.link}" target="_blank" rel="noreferrer">${pub.status}</a>
     </article>
   `).join("");
 }
