@@ -225,22 +225,30 @@ const publications = [
   {
     title: "On the Performance of Multi-IRS-Assisted Networks Across Real Urban, Suburban, and Rural Environments",
     venue: "IEEE WCNC",
-    status: "Paper link"
+    authors: "M. Ibrahim, W. H. Raza, M. Moiz, S. A. Hassan, H. Jung, and M. Gidlund.",
+    status: "Paper link",
+    link: "https://ieeexplore.ieee.org/abstract/document/10571294"
   },
   {
     title: "Deep Unfolding for SIM-Assisted Multiband MU-MISO Downlink Systems",
     venue: "IEEE Communications Letters",
-    status: "Paper link"
+    authors: "M. Ibrahim, A. Mezghani, and E. Hossain.",
+    status: "Paper link",
+    link: "https://arxiv.org/abs/2603.02122"
   },
   {
     title: "Are Stacked Intelligent Metasurfaces Better than Single-Layer Reconfigurable Intelligent Surfaces for Wideband Multi-User MIMO Communication Systems?",
     venue: "IEEE Transactions on Wireless Communications",
-    status: "Paper link"
+    authors: "M. Ibrahim, A. Mezghani, and E. Hossain.",
+    status: "Paper link",
+    link: "https://arxiv.org/abs/2602.23534"
   },
   {
     title: "Science-Informed Design of Deep Learning With Applications to Wireless Systems: A Tutorial",
     venue: "IEEE Communications Surveys and Tutorials",
-    status: "In Review"
+    authors: "A. Termehchi, E. Hossain, A. Vera-Rivera, M. Ibrahim, and I. Woungang.",
+    status: "In Review | Paper link",
+    link: "https://arxiv.org/abs/2407.07742"
   }
 ];
 
@@ -316,9 +324,10 @@ function renderPublications() {
     <article class="publication-card">
       <div>
         <h3>${pub.title}</h3>
+        <p>${pub.authors}</p>
         <p>${pub.venue}</p>
       </div>
-      <span>${pub.status}</span>
+      <a href="${pub.link}" target="_blank" rel="noreferrer"><span>${pub.status}</span></a>
     </article>
   `).join("");
 }
