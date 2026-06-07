@@ -17,7 +17,6 @@
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       <div class="nav-links">
         <a href="#about">About</a>
-        <a href="#research">Research</a>
         <a href="#projects">Projects</a>
         <a href="#publications">Publications</a>
         <a href="#skills">Skills</a>
@@ -31,8 +30,20 @@
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="container hero-layout">
         <div class="hero-content">
-          <p class="eyebrow">M.Sc. Electrical and Computer Engineering · University of Manitoba</p>
-          <h1>Muhammad Ibrahim</h1>
+          <div class="hero-identity">
+            <img
+              src="assets/PicForWeb.jpeg"
+              alt="Portrait of Muhammad Ibrahim"
+              class="hero-avatar"
+              width="120"
+              height="120"
+              loading="eager"
+            />
+            <div class="hero-identity-text">
+              <p class="eyebrow">M.Sc. Electrical and Computer Engineering · University of Manitoba</p>
+              <h1>Muhammad Ibrahim</h1>
+            </div>
+          </div>
           <p class="hero-subtitle">Wireless communication, machine learning, UAV systems, and simulation-based research.</p>
           <p class="hero-text">
             I work at the intersection of 5G/6G wireless systems, intelligent surfaces, reinforcement learning,
@@ -73,24 +84,6 @@
         </div>
 
         <aside class="hero-aside">
-          <div class="profile-photo-card">
-            <div class="photo-glow" aria-hidden="true"></div>
-            <div class="photo-frame">
-              <img
-                src="assets/PicForWeb.jpeg"
-                alt="Portrait of Muhammad Ibrahim"
-                class="profile-photo"
-                width="360"
-                height="420"
-                loading="eager"
-              />
-            </div>
-            <div class="photo-footer">
-              <span class="status-badge"><span class="status-dot" aria-hidden="true"></span>Open to collaboration</span>
-              <span class="location-badge">Winnipeg, Canada</span>
-            </div>
-          </div>
-
           <div class="hero-card">
             <div class="hero-card-header">
               <span class="hero-card-icon" aria-hidden="true">◎</span>
@@ -140,23 +133,12 @@
       </div>
     </section>
 
-    <section id="research" class="section muted">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-label">Featured research</p>
-          <h2>Research themes</h2>
-          <p>Selected work across wireless communication, intelligent surfaces, deep unfolding, and multi-agent learning.</p>
-        </div>
-        <div id="research-grid" class="card-grid"></div>
-      </div>
-    </section>
-
     <section id="projects" class="section">
       <div class="container">
         <div class="section-heading">
           <p class="section-label">Projects</p>
           <h2>Project portfolio</h2>
-          <p>Projects are grouped by domain so visitors can quickly understand the research and engineering depth.</p>
+          <p>Click a project name to expand details, reports, and links.</p>
         </div>
 
         <div class="filters" aria-label="Project filters">
@@ -169,7 +151,7 @@
           <button class="filter-btn" data-filter="Networking and Software">Software</button>
         </div>
 
-        <div id="projects-grid" class="project-grid"></div>
+        <div id="projects-list" class="project-list"></div>
       </div>
     </section>
 
