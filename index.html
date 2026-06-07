@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Muhammad Ibrahim portfolio website. Wireless communication, machine learning, reinforcement learning, UAV systems, embedded systems, and simulation-based research." />
+  <title>Muhammad Ibrahim | Research and Engineering Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="#home">Muhammad Ibrahim</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow">M.Sc. Electrical and Computer Engineering</p>
+          <h1>Wireless communication, machine learning, UAV systems, and simulation-based research.</h1>
+          <p class="hero-text">
+            I work at the intersection of 5G/6G wireless systems, intelligent surfaces, reinforcement learning,
+            UAV autonomy, embedded systems, and edge AI. This website brings together my research, engineering
+            projects, publications, and code.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn secondary" href="assets/Muhammad-Ibrahim-CV.pdf" target="_blank" rel="noreferrer">Download CV</a>
+          </div>
+          <div class="profile-links">
+            <a href="https://github.com/mibrahim76112" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://scholar.google.com/" target="_blank" rel="noreferrer">Google Scholar</a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <h2>Current focus</h2>
+          <ul>
+            <li>5G/6G physical layer modeling</li>
+            <li>Deep unfolding for wireless optimization</li>
+            <li>Multi-agent reinforcement learning</li>
+            <li>UAV tracking and safety-aware control</li>
+            <li>Simulation, validation, and performance analysis</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container two-col">
+        <div>
+          <p class="section-label">About</p>
+          <h2>Researcher and engineer building AI-driven communication and autonomous systems.</h2>
+        </div>
+        <div class="content-block">
+          <p>
+            I am an M.Sc. candidate in Electrical and Computer Engineering at the University of Manitoba.
+            My work focuses on wireless communication, machine learning, reinforcement learning, physical-layer
+            modeling, and simulation-based optimization for future wireless systems.
+          </p>
+          <p>
+            Alongside research, I have worked on UAV autonomy, object detection, edge AI deployment,
+            embedded hardware projects, FPGA design, networking analysis, and robotics/control simulations.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="research" class="section muted">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">Featured research</p>
+          <h2>Research themes</h2>
+          <p>Selected work across wireless communication, intelligent surfaces, deep unfolding, and multi-agent learning.</p>
+        </div>
+        <div id="research-grid" class="card-grid"></div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">Projects</p>
+          <h2>Project portfolio</h2>
+          <p>Projects are grouped by domain so visitors can quickly understand the research and engineering depth.</p>
+        </div>
+
+        <div class="filters" aria-label="Project filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="Wireless Communication">Wireless</button>
+          <button class="filter-btn" data-filter="Reinforcement Learning">RL and MADRL</button>
+          <button class="filter-btn" data-filter="Computer Vision">CV and ML</button>
+          <button class="filter-btn" data-filter="Robotics and Control">Robotics</button>
+          <button class="filter-btn" data-filter="Embedded and Hardware">Embedded</button>
+          <button class="filter-btn" data-filter="Networking and Software">Software</button>
+        </div>
+
+        <div id="projects-grid" class="project-grid"></div>
+      </div>
+    </section>
+
+    <section id="publications" class="section muted">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">Publications</p>
+          <h2>Selected publications</h2>
+          <p>Research publications in wireless communication, intelligent surfaces, and science-informed machine learning.</p>
+        </div>
+        <div id="publication-list" class="publication-list"></div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">Skills</p>
+          <h2>Technical toolkit</h2>
+        </div>
+        <div id="skills-grid" class="skills-grid"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="container contact-card">
+        <div>
+          <p class="section-label">Contact</p>
+          <h2>Open to research collaboration, engineering roles, and project discussions.</h2>
+          <p>
+            Based in Winnipeg, Canada. Feel free to reach out for wireless systems, reinforcement learning,
+            UAV autonomy, embedded systems, or simulation-based projects.
+          </p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn primary" href="mailto:ibrah101@myumanitoba.ca">Email Me</a>
+          <a class="btn secondary" href="https://github.com/mibrahim76112" target="_blank" rel="noreferrer">GitHub Profile</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© <span id="year"></span> Muhammad Ibrahim. Built for GitHub Pages.</p>
+      <a href="#home">Back to top</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
