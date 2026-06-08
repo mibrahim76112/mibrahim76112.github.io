@@ -17,6 +17,7 @@
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#publications">Publications</a>
         <a href="#skills">Skills</a>
@@ -28,17 +29,20 @@
   <main>
     <section id="home" class="hero section">
       <div class="hero-bg" aria-hidden="true"></div>
-      <div class="container hero-layout">
+      <div class="container hero-layout hero-layout-single">
         <div class="hero-content">
           <div class="hero-identity">
-            <img
-              src="assets/PicForWeb.jpeg"
-              alt="Portrait of Muhammad Ibrahim"
-              class="hero-avatar"
-              width="120"
-              height="120"
-              loading="eager"
-            />
+            <div class="hero-avatar-wrap">
+              <img
+                src="./assets/PicForWeb.jpeg"
+                alt="Portrait of Muhammad Ibrahim"
+                class="hero-avatar"
+                width="160"
+                height="160"
+                loading="eager"
+                onerror="this.onerror=null;this.src='./assets/profile.jpg';"
+              />
+            </div>
             <div class="hero-identity-text">
               <p class="eyebrow">M.Sc. Electrical and Computer Engineering · University of Manitoba</p>
               <h1>Muhammad Ibrahim</h1>
@@ -59,8 +63,8 @@
               <span>Projects</span>
             </div>
             <div class="stat">
-              <strong>6</strong>
-              <span>Research areas</span>
+              <strong>4</strong>
+              <span>Experience roles</span>
             </div>
           </div>
           <div class="hero-actions">
@@ -82,22 +86,6 @@
             </a>
           </div>
         </div>
-
-        <aside class="hero-aside">
-          <div class="hero-card">
-            <div class="hero-card-header">
-              <span class="hero-card-icon" aria-hidden="true">◎</span>
-              <h2>Current focus</h2>
-            </div>
-            <ul class="focus-list">
-              <li><span>01</span>5G/6G physical layer modeling</li>
-              <li><span>02</span>Deep unfolding for wireless optimization</li>
-              <li><span>03</span>Multi-agent reinforcement learning</li>
-              <li><span>04</span>UAV tracking and safety-aware control</li>
-              <li><span>05</span>Simulation, validation, and performance analysis</li>
-            </ul>
-          </div>
-        </aside>
       </div>
     </section>
 
@@ -110,7 +98,7 @@
         <div class="about-body">
           <div class="about-photo-wrap">
             <img
-              src="assets/PicForWeb.jpeg"
+              src="./assets/PicForWeb.jpeg"
               alt="Muhammad Ibrahim"
               class="about-photo"
               width="200"
@@ -133,42 +121,15 @@
       </div>
     </section>
 
-    <section id="projects" class="section">
+    <section id="experience" class="section">
       <div class="container">
         <div class="section-heading">
-          <p class="section-label">Projects</p>
-          <h2>Project portfolio</h2>
-          <p>Click a project name to expand details, reports, and links.</p>
+          <p class="section-label">Experience</p>
+          <h2>Research and engineering roles</h2>
+          <p>Academic research at WCNS Lab and IPT Lab, plus embedded ML and UAV engineering experience.</p>
         </div>
 
-        <div class="filters" aria-label="Project filters">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="Wireless Communication">Wireless</button>
-          <button class="filter-btn" data-filter="Reinforcement Learning">RL and MADRL</button>
-          <button class="filter-btn" data-filter="Computer Vision">CV and ML</button>
-          <button class="filter-btn" data-filter="Robotics and Control">Robotics</button>
-          <button class="filter-btn" data-filter="Embedded and Hardware">Embedded</button>
-          <button class="filter-btn" data-filter="Networking and Software">Software</button>
-        </div>
-
-        <div id="projects-list" class="project-list"></div>
-      </div>
-    </section>
-
-    
-    <section id="research-experience" class="section">
-      <div class="container">
-        <div class="section-title section-title-wide">
-          <div>
-            <p class="eyebrow">Research Experience</p>
-            <h2>Academic and lab-based research roles</h2>
-          </div>
-          <p>
-            Research work across wireless communication, intelligent surfaces, deep unfolding, reinforcement learning,
-            channel modeling, and simulation-based performance evaluation.
-          </p>
-        </div>
-
+        <h3 class="experience-group-title">Research Experience</h3>
         <div class="experience-list">
           <article class="experience-card">
             <div class="experience-top">
@@ -203,22 +164,8 @@
             </ul>
           </article>
         </div>
-      </div>
-    </section>
 
-    <section id="engineering-experience" class="section section-soft">
-      <div class="container">
-        <div class="section-title section-title-wide">
-          <div>
-            <p class="eyebrow">Engineering Experience</p>
-            <h2>UAV, embedded, and edge-AI engineering roles</h2>
-          </div>
-          <p>
-            Practical engineering work involving UAV systems, embedded hardware, sensors, computer vision,
-            Jetson Nano deployment, and real-time debugging.
-          </p>
-        </div>
-
+        <h3 class="experience-group-title">Engineering Experience</h3>
         <div class="experience-list">
           <article class="experience-card">
             <div class="experience-top">
@@ -256,6 +203,27 @@
       </div>
     </section>
 
+    <section id="projects" class="section section-soft">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">Projects</p>
+          <h2>Project portfolio</h2>
+          <p>Click a project name to expand details, reports, and links.</p>
+        </div>
+
+        <div class="filters" aria-label="Project filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="Wireless Communication">Wireless</button>
+          <button class="filter-btn" data-filter="Reinforcement Learning">RL and MADRL</button>
+          <button class="filter-btn" data-filter="Computer Vision">CV and ML</button>
+          <button class="filter-btn" data-filter="Robotics and Control">Robotics</button>
+          <button class="filter-btn" data-filter="Embedded and Hardware">Embedded</button>
+          <button class="filter-btn" data-filter="Networking and Software">Software</button>
+        </div>
+
+        <div id="projects-list" class="project-list"></div>
+      </div>
+    </section>
 
     <section id="publications" class="section muted">
       <div class="container">
@@ -282,7 +250,7 @@
       <div class="container contact-card">
         <div class="contact-info">
           <img
-            src="assets/PicForWeb.jpeg"
+            src="./assets/PicForWeb.jpeg"
             alt=""
             class="contact-avatar"
             width="72"
