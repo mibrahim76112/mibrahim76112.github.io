@@ -220,6 +220,15 @@ const skills = [
   }
 ];
 
+const awards = [
+  { title: "University of Manitoba Graduate Fellowship", org: "University of Manitoba" },
+  { title: "International Graduate Student Entrance Scholarship", org: "University of Manitoba" },
+  { title: "Research Completion Award", org: "University of Manitoba" },
+  { title: "NUST Academic Merit Scholarship", org: "NUST", year: "2021 & 2023" },
+  { title: "NUST High Achiever Award, Silver Medal", org: "NUST" },
+  { title: "Winner, UAS Challenge Pakistan 2022", org: "Team Burraq" }
+];
+
 const categoryClass = {
   "Wireless Communication": "cat-wireless",
   "Reinforcement Learning":  "cat-rl",
@@ -288,6 +297,20 @@ function renderSkills() {
   `).join("");
 }
 
+function renderAwards() {
+  const list = document.getElementById("awards-list");
+  list.innerHTML = awards.map((award, i) => `
+    <article class="award-card">
+      <span class="award-icon" aria-hidden="true">★</span>
+      <div class="award-body">
+        <h3>${award.title}</h3>
+        <p class="award-meta">${award.org}${award.year ? ` · ${award.year}` : ""}</p>
+      </div>
+      <span class="award-index">${String(i + 1).padStart(2, "0")}</span>
+    </article>
+  `).join("");
+}
+
 function setupFilters() {
   const buttons = document.querySelectorAll(".filter-btn");
   buttons.forEach(btn => {
@@ -346,6 +369,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 renderProjects();
 renderPublications();
 renderSkills();
+renderAwards();
 setupFilters();
 setupNav();
 setupScrollSpy();
