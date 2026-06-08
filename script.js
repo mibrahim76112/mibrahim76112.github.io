@@ -1,32 +1,3 @@
-const researchItems = [
-  {
-    title: "Stacked Intelligent Metasurface Assisted Downlink Transmission",
-    description:
-      "Mathematical system modeling for multi-user downlink transmission with shared SIM phase shifts, transmit beamforming, inter-user interference, and achievable-rate analysis.",
-    tags: ["Wireless", "SIM", "MISO", "Optimization"]
-  },
-  {
-    title: "Deep Unfolding for Wireless Beamforming",
-    description:
-      "Trainable optimization framework that maps iterative beamforming and phase-shift updates into neural network layers, then evaluates sum rate, convergence, robustness, and computational cost.",
-    tags: ["Deep Unfolding", "PyTorch", "WMMSE", "Beamforming"],
-    link: "https://github.com/mibrahim76112/WMMSE_Unfolding"
-  },
-  {
-    title: "DRL-Based Communication Graph Selection",
-    description:
-      "Multi-agent reinforcement learning methods for communication graph selection and consensus behavior, designed to reduce communication cost while maintaining stable convergence.",
-    tags: ["MADRL", "Consensus", "Graph Learning", "UAVs"]
-  },
-  {
-    title: "IRS-Assisted Networks in Real Environments",
-    description:
-      "Performance analysis of IRS-assisted UHF networks using rural, suburban, and urban environments with real building locations and heights modeled as wireless blockages.",
-    tags: ["IRS", "Coverage", "Spectral Efficiency", "Energy Efficiency"],
-    link: "https://github.com/mibrahim76112/Analysis-of-user-outage-probability-with-multiple-base-stations-present"
-  }
-];
-
 const projects = [
   {
     title: "DRL-Based Object Detection and Tracking from a UAV",
@@ -279,42 +250,46 @@ const skills = [
   }
 ];
 
+const categoryClass = {
+  "Wireless Communication": "cat-wireless",
+  "Reinforcement Learning": "cat-rl",
+  "Computer Vision": "cat-cv",
+  "Robotics and Control": "cat-robotics",
+  "Embedded and Hardware": "cat-embedded",
+  "Networking and Software": "cat-software"
+};
+
 function createTags(tags) {
   return tags.map(tag => `<span class="tag">${tag}</span>`).join("");
 }
 
-function renderResearch() {
-  const grid = document.getElementById("research-grid");
-  grid.innerHTML = researchItems.map(item => `
-    <article class="card">
-      <h3>${item.title}</h3>
-      <p>${item.description}</p>
-      <div class="tags">${createTags(item.tags)}</div>
-      ${item.link ? `<div class="project-links"><a href="${item.link}" target="_blank" rel="noreferrer">GitHub</a></div>` : ""}
-    </article>
-  `).join("");
-}
-
 function renderProjects(filter = "all") {
-  const grid = document.getElementById("projects-grid");
+  const list = document.getElementById("projects-list");
   const filtered = filter === "all" ? projects : projects.filter(project => project.category === filter);
 
-  grid.innerHTML = filtered.map(project => `
-    <article class="project-card">
-      <div>
-        <h3>${project.title}</h3>
+  list.innerHTML = filtered.map((project, index) => `
+    <details class="project-item ${categoryClass[project.category] || ""}">
+      <summary class="project-summary">
+        <span class="project-index">${String(index + 1).padStart(2, "0")}</span>
+        <span class="project-name">${project.title}</span>
+        ${project.featured ? `<span class="meta-pill featured-pill">Featured</span>` : ""}
+        <span class="project-chevron" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </span>
+      </summary>
+      <div class="project-details">
         <div class="project-meta">
-          <span class="meta-pill">${project.category}</span>
+          <span class="meta-pill cat">${project.category}</span>
           <span class="meta-pill">${project.date}</span>
-          ${project.featured ? `<span class="meta-pill">Featured</span>` : ""}
         </div>
         <p>${project.description}</p>
         <div class="tags">${createTags(project.tech)}</div>
+        <div class="project-links">
+          ${project.github ? `<a href="${project.github}" target="_blank" rel="noreferrer">GitHub</a>` : ""}
+          ${project.report ? `<a href="${project.report}" target="_blank" rel="noreferrer">Report</a>` : ""}
+        </div>
       </div>
-      <div class="project-links">
-        ${project.github ? `<a href="${project.github}" target="_blank" rel="noreferrer">GitHub</a>` : ""}
-      </div>
-    </article>
+    </details>
   `).join("");
 }
 
@@ -324,10 +299,10 @@ function renderPublications() {
     <article class="publication-card">
       <div>
         <h3>${pub.title}</h3>
-        <p>${pub.authors}</p>
-        <p>${pub.venue}</p>
+        <p class="pub-authors">${pub.authors}</p>
+        <p class="pub-venue">${pub.venue}</p>
       </div>
-      <a href="${pub.link}" target="_blank" rel="noreferrer"><span>${pub.status}</span></a>
+      <a class="pub-link" href="${pub.link}" target="_blank" rel="noreferrer">${pub.status}</a>
     </article>
   `).join("");
 }
@@ -372,7 +347,6 @@ function setupNav() {
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
-renderResearch();
 renderProjects();
 renderPublications();
 renderSkills();
