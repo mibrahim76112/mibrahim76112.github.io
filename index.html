@@ -7,14 +7,18 @@
   <title>Muhammad Ibrahim | Research and Engineering Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <!-- ── Header ── -->
   <header class="site-header">
     <nav class="nav container">
-      <a class="brand" href="#home">Muhammad Ibrahim</a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <a class="brand" href="#home">MI</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
@@ -27,206 +31,202 @@
   </header>
 
   <main>
+
+    <!-- ── Hero ── -->
     <section id="home" class="hero section">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="container hero-layout hero-layout-single">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-layout">
+
+        <!-- Left: text -->
         <div class="hero-content">
-          <div class="hero-identity">
-            <div class="hero-avatar-wrap">
-              <img
-                src="./assets/PicForWeb.jpeg"
-                alt="Portrait of Muhammad Ibrahim"
-                class="hero-avatar"
-                width="160"
-                height="160"
-                loading="eager"
-                onerror="this.onerror=null;this.src='./assets/profile.jpg';"
-              />
-            </div>
-            <div class="hero-identity-text">
-              <p class="eyebrow">M.Sc. Electrical and Computer Engineering · University of Manitoba</p>
-              <h1>Muhammad Ibrahim</h1>
-            </div>
-          </div>
+          <p class="eyebrow">M.Sc. Electrical &amp; Computer Engineering · University of Manitoba</p>
+          <h1>Muhammad<br>Ibrahim</h1>
           <p class="hero-subtitle">Wireless communication, machine learning, UAV systems, and simulation-based research.</p>
-          <p class="hero-text">
-            I work at the intersection of 5G/6G wireless systems, intelligent surfaces, reinforcement learning,
-            UAV autonomy, embedded systems, and edge AI.
-          </p>
+          <p class="hero-text">Working at the intersection of 5G/6G wireless systems, intelligent surfaces, reinforcement learning, UAV autonomy, embedded systems, and edge AI.</p>
+
           <div class="hero-stats">
-            <div class="stat">
-              <strong>4</strong>
-              <span>Publications</span>
-            </div>
-            <div class="stat">
-              <strong>20+</strong>
-              <span>Projects</span>
-            </div>
-            <div class="stat">
-              <strong>4</strong>
-              <span>Experience roles</span>
-            </div>
+            <div class="stat"><strong>4</strong><span>Publications</span></div>
+            <div class="stat"><strong>20+</strong><span>Projects</span></div>
+            <div class="stat"><strong>4</strong><span>Roles</span></div>
           </div>
+
           <div class="hero-actions">
             <a class="btn primary" href="#projects">View Projects</a>
             <a class="btn secondary" href="assets/Muhammad-Ibrahim-CV.pdf" target="_blank" rel="noreferrer">Download CV</a>
           </div>
+
           <div class="profile-links">
             <a class="profile-link" href="https://github.com/mibrahim76112" target="_blank" rel="noreferrer">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3 .405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
               GitHub
             </a>
             <a class="profile-link" href="https://www.linkedin.com/in/muhammad-ibrahim-9889431bb/" target="_blank" rel="noreferrer">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               LinkedIn
             </a>
             <a class="profile-link" href="https://scholar.google.com/citations?user=JRRKtXYAAAAJ&hl=en" target="_blank" rel="noreferrer">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5s-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5s-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
               Google Scholar
             </a>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section id="about" class="section">
-      <div class="container about-layout">
-        <div class="about-intro">
-          <p class="section-label">About</p>
-          <h2>Researcher and engineer building AI-driven communication and autonomous systems.</h2>
-        </div>
-        <div class="about-body">
-          <div class="about-photo-wrap">
+        <!-- Right: profile picture -->
+        <div class="hero-photo-col">
+          <div class="hero-photo-frame">
             <img
               src="./assets/PicForWeb.jpeg"
-              alt="Muhammad Ibrahim"
-              class="about-photo"
-              width="200"
-              height="200"
-              loading="lazy"
+              alt="Portrait of Muhammad Ibrahim"
+              class="hero-photo"
+              width="340"
+              height="400"
+              loading="eager"
+              onerror="this.onerror=null;this.src='./assets/profile.jpg';"
             />
           </div>
-          <div class="content-block">
-            <p>
-              I am an M.Sc. candidate in Electrical and Computer Engineering at the University of Manitoba.
-              My work focuses on wireless communication, machine learning, reinforcement learning, physical-layer
-              modeling, and simulation-based optimization for future wireless systems.
-            </p>
-            <p>
-              Alongside research, I have worked on UAV autonomy, object detection, edge AI deployment,
-              embedded hardware projects, FPGA design, networking analysis, and robotics/control simulations.
-            </p>
+          <div class="hero-photo-badge">
+            <span class="badge-dot"></span>
+            Open to opportunities
           </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── About ── -->
+    <section id="about" class="section section-muted">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">About</p>
+          <h2>Researcher &amp; engineer building AI-driven communication and autonomous systems.</h2>
+        </div>
+        <div class="about-body">
+          <p>
+            I am an M.Sc. candidate in Electrical and Computer Engineering at the University of Manitoba.
+            My work focuses on wireless communication, machine learning, reinforcement learning, physical-layer
+            modeling, and simulation-based optimization for future wireless systems.
+          </p>
+          <p>
+            Alongside research, I have worked on UAV autonomy, object detection, edge AI deployment,
+            embedded hardware projects, FPGA design, networking analysis, and robotics/control simulations.
+          </p>
         </div>
       </div>
     </section>
 
+    <!-- ── Experience ── -->
     <section id="experience" class="section">
       <div class="container">
         <div class="section-heading">
           <p class="section-label">Experience</p>
-          <h2>Research and engineering roles</h2>
-          <p>Academic research at WCNS Lab and IPT Lab, plus embedded ML and UAV engineering experience.</p>
+          <h2>Research &amp; engineering roles</h2>
+          <p class="section-sub">Academic research at WiCoNS Lab and IPT Lab, plus embedded ML and UAV engineering experience.</p>
         </div>
 
-        <h3 class="experience-group-title">Research Experience</h3>
-        <div class="experience-list">
-          <article class="experience-card">
-            <div class="experience-top">
-              <div>
-                <h3>Graduate Research Assistant</h3>
-                <p class="experience-org">Wireless Communication, Networking and Services Lab · University of Manitoba</p>
+        <div class="experience-group">
+          <h3 class="experience-group-title">Research Experience</h3>
+          <div class="experience-list">
+            <article class="experience-card">
+              <div class="experience-top">
+                <div>
+                  <h4 class="experience-title">Graduate Research Assistant</h4>
+                  <p class="experience-org">Wireless Communication, Networking and Services Lab · University of Manitoba</p>
+                  <p class="experience-location">Winnipeg, Canada</p>
+                </div>
+                <span class="experience-date">Sep 2024 – Present</span>
               </div>
-              <span class="experience-date">Sep 2024 to Present</span>
-            </div>
-            <p class="experience-location">Winnipeg, Canada</p>
-            <ul>
-              <li>Developed mathematical system models for stacked intelligent metasurface-assisted downlink transmission, including multi-user channels, shared SIM phase shifts, transmit beamforming, interference modeling, and achievable-rate formulation.</li>
-              <li>Implemented deep unfolding methods by mapping iterative wireless optimization updates into trainable layers and evaluating convergence speed, sum-rate performance, robustness, and computational cost.</li>
-              <li>Developed DRL-based methods for communication graph selection and consensus behavior in multi-agent systems, with emphasis on reducing communication cost while maintaining stable convergence.</li>
-              <li>Worked with 3GPP-inspired wireless channel models, including path loss, fading, antenna effects, beamforming, Doppler, and SINR-based performance evaluation.</li>
-            </ul>
-          </article>
+              <ul>
+                <li>Developed mathematical system models for stacked intelligent metasurface-assisted downlink transmission, including multi-user channels, shared SIM phase shifts, transmit beamforming, interference modeling, and achievable-rate formulation.</li>
+                <li>Implemented deep unfolding methods by mapping iterative wireless optimization updates into trainable layers and evaluating convergence speed, sum-rate performance, robustness, and computational cost.</li>
+                <li>Developed DRL-based methods for communication graph selection and consensus behavior in multi-agent systems, with emphasis on reducing communication cost while maintaining stable convergence.</li>
+                <li>Worked with 3GPP-inspired wireless channel models, including path loss, fading, antenna effects, beamforming, Doppler, and SINR-based performance evaluation.</li>
+              </ul>
+            </article>
 
-          <article class="experience-card">
-            <div class="experience-top">
-              <div>
-                <h3>Undergraduate Research Assistant</h3>
-                <p class="experience-org">Information Processing and Transmission Lab · National University of Sciences and Technology</p>
+            <article class="experience-card">
+              <div class="experience-top">
+                <div>
+                  <h4 class="experience-title">Undergraduate Research Assistant</h4>
+                  <p class="experience-org">Information Processing and Transmission Lab · NUST</p>
+                  <p class="experience-location">Islamabad, Pakistan</p>
+                </div>
+                <span class="experience-date">Jun 2023 – May 2024</span>
               </div>
-              <span class="experience-date">Jun 2023 to May 2024</span>
-            </div>
-            <p class="experience-location">Islamabad, Pakistan</p>
-            <ul>
-              <li>Built Python simulation scripts for wireless resource allocation and intelligent reflecting surface-assisted communication networks.</li>
-              <li>Used GDAL-based 3D environment data to compare wireless network behavior across urban, suburban, and rural deployment settings.</li>
-              <li>Tested DDQN-based radio parameter selection for dynamic multi-user scenarios and compared learning-based results with baseline approaches.</li>
-            </ul>
-          </article>
+              <ul>
+                <li>Built Python simulation scripts for wireless resource allocation and intelligent reflecting surface-assisted communication networks.</li>
+                <li>Used GDAL-based 3D environment data to compare wireless network behavior across urban, suburban, and rural deployment settings.</li>
+                <li>Tested DDQN-based radio parameter selection for dynamic multi-user scenarios and compared learning-based results with baseline approaches.</li>
+              </ul>
+            </article>
+          </div>
         </div>
 
-        <h3 class="experience-group-title">Engineering Experience</h3>
-        <div class="experience-list">
-          <article class="experience-card">
-            <div class="experience-top">
-              <div>
-                <h3>Embedded ML Research Intern</h3>
-                <p class="experience-org">Electronic System and Automation Centre Lab (ESDAC)</p>
+        <div class="experience-group">
+          <h3 class="experience-group-title">Engineering Experience</h3>
+          <div class="experience-list">
+            <article class="experience-card">
+              <div class="experience-top">
+                <div>
+                  <h4 class="experience-title">Embedded ML Research Intern</h4>
+                  <p class="experience-org">Electronic System and Automation Centre Lab (ESDAC)</p>
+                  <p class="experience-location">Islamabad, Pakistan</p>
+                </div>
+                <span class="experience-date">May 2022 – Aug 2022</span>
               </div>
-              <span class="experience-date">May 2022 to Aug 2022</span>
-            </div>
-            <p class="experience-location">Hybrid</p>
-            <ul>
-              <li>Worked on real-time fringe classification using object detection models on NVIDIA Jetson Nano.</li>
-              <li>Performed real-time inference on Jetson Nano for embedded computer vision classification tasks.</li>
-              <li>Worked across embedded systems, computer vision, edge AI deployment, and hardware-constrained inference.</li>
-            </ul>
-          </article>
+              <ul>
+                <li>Worked on real-time fringe classification using object detection models on NVIDIA Jetson Nano.</li>
+                <li>Performed real-time inference on Jetson Nano for embedded computer vision classification tasks.</li>
+                <li>Worked across embedded systems, computer vision, edge AI deployment, and hardware-constrained inference.</li>
+              </ul>
+            </article>
 
-          <article class="experience-card">
-            <div class="experience-top">
-              <div>
-                <h3>AI and Electrical Systems Member</h3>
-                <p class="experience-org">Team Burraq · Student-Led UAV Competition Team</p>
+            <article class="experience-card">
+              <div class="experience-top">
+                <div>
+                  <h4 class="experience-title">AI and Electrical Systems Member</h4>
+                  <p class="experience-org">Team Burraq · Student-Led UAV Competition Team</p>
+                  <p class="experience-location">Islamabad, Pakistan</p>
+                </div>
+                <span class="experience-date">Mar 2022 – Dec 2023</span>
               </div>
-              <span class="experience-date">Mar 2022 to Dec 2023</span>
-            </div>
-            <p class="experience-location">Islamabad, Pakistan</p>
-            <ul>
-              <li>Worked on autonomous UAV payload delivery systems as part of a student engineering competition team.</li>
-              <li>Integrated sensors, cameras, and embedded hardware interfaces including UART, I2C, GPIO, and ADC.</li>
-              <li>Used telemetry logs, sensor readings, and field-test observations to debug hardware and software issues.</li>
-              <li>Contributed to UAV-based agricultural automation work, including the autonomous pesticide spraying project for UAS Challenge Pakistan 2022.</li>
-            </ul>
-          </article>
+              <ul>
+                <li>Worked on autonomous UAV payload delivery systems as part of a student engineering competition team.</li>
+                <li>Integrated sensors, cameras, and embedded hardware interfaces including UART, I2C, GPIO, and ADC.</li>
+                <li>Used telemetry logs, sensor readings, and field-test observations to debug hardware and software issues.</li>
+                <li>Contributed to UAV-based agricultural automation work, including the autonomous pesticide spraying project for UAS Challenge Pakistan 2022.</li>
+              </ul>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="publications" class="section muted">
+    <!-- ── Publications ── -->
+    <section id="publications" class="section section-muted">
       <div class="container">
         <div class="section-heading">
           <p class="section-label">Publications</p>
-          <h2>Publications</h2>
-          <p>Research publications in wireless communication, intelligent surfaces, and science-informed machine learning.</p>
+          <h2>Research publications</h2>
+          <p class="section-sub">Wireless communication, intelligent surfaces, and science-informed machine learning.</p>
         </div>
         <div id="publication-list" class="publication-list"></div>
       </div>
     </section>
 
-    <section id="projects" class="section section-soft">
+    <!-- ── Projects ── -->
+    <section id="projects" class="section">
       <div class="container">
         <div class="section-heading">
           <p class="section-label">Projects</p>
           <h2>Project portfolio</h2>
-          <p>Click a project name to expand details, reports, and links.</p>
+          <p class="section-sub">Click a project to expand details and links.</p>
         </div>
 
-        <div class="filters" aria-label="Project filters">
+        <div class="filters" role="group" aria-label="Project filters">
           <button class="filter-btn active" data-filter="all">All</button>
           <button class="filter-btn" data-filter="Wireless Communication">Wireless</button>
-          <button class="filter-btn" data-filter="Reinforcement Learning">RL and MADRL</button>
-          <button class="filter-btn" data-filter="Computer Vision">CV and ML</button>
+          <button class="filter-btn" data-filter="Reinforcement Learning">RL &amp; MADRL</button>
+          <button class="filter-btn" data-filter="Computer Vision">CV &amp; ML</button>
           <button class="filter-btn" data-filter="Robotics and Control">Robotics</button>
           <button class="filter-btn" data-filter="Embedded and Hardware">Embedded</button>
           <button class="filter-btn" data-filter="Networking and Software">Software</button>
@@ -236,7 +236,8 @@
       </div>
     </section>
 
-    <section id="skills" class="section">
+    <!-- ── Skills ── -->
+    <section id="skills" class="section section-muted">
       <div class="container">
         <div class="section-heading">
           <p class="section-label">Skills</p>
@@ -246,38 +247,29 @@
       </div>
     </section>
 
-    <section id="contact" class="section contact-section">
-      <div class="container contact-card">
-        <div class="contact-info">
-          <img
-            src="./assets/PicForWeb.jpeg"
-            alt=""
-            class="contact-avatar"
-            width="72"
-            height="72"
-            loading="lazy"
-          />
-          <div>
-            <p class="section-label">Contact</p>
+    <!-- ── Contact ── -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-card">
+          <div class="contact-text">
+            <p class="section-label" style="color:rgba(255,255,255,0.55)">Contact</p>
             <h2>Open to research collaboration, engineering roles, and project discussions.</h2>
-            <p>
-              Based in Winnipeg, Canada. Feel free to reach out for wireless systems, reinforcement learning,
-              UAV autonomy, embedded systems, or simulation-based projects.
-            </p>
+            <p>Based in Winnipeg, Canada. Reach out for wireless systems, reinforcement learning, UAV autonomy, embedded systems, or simulation-based projects.</p>
           </div>
-        </div>
-        <div class="contact-actions">
-          <a class="btn primary" href="mailto:ibrah101@myumanitoba.ca">Email Me</a>
-          <a class="btn secondary" href="https://github.com/mibrahim76112" target="_blank" rel="noreferrer">GitHub Profile</a>
+          <div class="contact-actions">
+            <a class="btn primary" href="mailto:ibrah101@myumanitoba.ca">Email Me</a>
+            <a class="btn secondary" href="https://github.com/mibrahim76112" target="_blank" rel="noreferrer">GitHub Profile</a>
+          </div>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
     <div class="container footer-content">
-      <p>© <span id="year"></span> Muhammad Ibrahim. Built for GitHub Pages.</p>
-      <a href="#home">Back to top</a>
+      <p>© <span id="year"></span> Muhammad Ibrahim · Built for GitHub Pages</p>
+      <a href="#home" class="back-top">Back to top ↑</a>
     </div>
   </footer>
 
