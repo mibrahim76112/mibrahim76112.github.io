@@ -179,14 +179,14 @@ const publications = [
   },
   {
     title: "Are Stacked Intelligent Metasurfaces Better than Single-Layer Reconfigurable Intelligent Surfaces for Wideband Multi-User MIMO Communication Systems?",
-    venue: "IEEE Trans. Wireless Commun.",
+    venue: "IEEE Transactions on Wireless Communications",
     authors: "M. Ibrahim, A. Mezghani, and E. Hossain.",
     status: "Paper link",
     link: "https://arxiv.org/abs/2602.23534"
   },
   {
     title: "Science-Informed Design of Deep Learning With Applications to Wireless Systems: A Tutorial",
-    venue: "IEEE Commun. Surveys Tuts.",
+    venue: "IEEE Communications Surveys & Tutorials",
     authors: "A. Termehchi, E. Hossain, A. Vera-Rivera, M. Ibrahim, and I. Woungang.",
     status: "In Review · Paper link",
     link: "https://arxiv.org/abs/2407.07742"
