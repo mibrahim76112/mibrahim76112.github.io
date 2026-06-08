@@ -22,9 +22,7 @@ const projects = [
     category: "Wireless Communication",
     date: "Mar 2023 – May 2024",
     description: "Evaluated IRS-assisted UHF networks in rural, suburban, and urban scenarios. Modeled real building locations and heights as blockage data to analyze coverage probability, spectral efficiency, energy efficiency, rate per unit area, IRS density, BS density, element count, and deployment tradeoffs.",
-    tech: ["Python", "Wireless Simulation", "IRS", "GDAL", "Performance Analysis"],
-    github: "https://github.com/mibrahim76112/Analysis-of-user-outage-probability-with-multiple-base-stations-present",
-    featured: true
+    tech: ["Python", "Wireless Simulation", "IRS", "GDAL", "Performance Analysis"]
   },
   {
     title: "WMMSE and Deep Unfolding for Wireless Optimization",
