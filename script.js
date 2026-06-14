@@ -398,6 +398,16 @@ function setupScrollSpy() {
 }
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderProjects();
+  renderPublications();
+  renderSkills();
+  renderAwards();
+  setupFilters();
+  setupNav();
+  setupScrollSpy();
+});
 renderProjects();
 renderPublications();
 renderSkills();
