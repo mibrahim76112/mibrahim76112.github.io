@@ -242,34 +242,63 @@ function createTags(tags) {
   return tags.map(t => `<span class="tag">${t}</span>`).join("");
 }
 
+let showingAllProjects = false;
+let currentProjectFilter = "all";
+const INITIAL_PROJECT_COUNT = 4;
+
 function renderProjects(filter = "all") {
+  currentProjectFilter = filter;
+
   const list = document.getElementById("projects-list");
   const filtered = filter === "all" ? projects : projects.filter(p => p.category === filter);
+  const visibleProjects = showingAllProjects ? filtered : filtered.slice(0, INITIAL_PROJECT_COUNT);
+  const remainingCount = Math.max(filtered.length - INITIAL_PROJECT_COUNT, 0);
 
-  list.innerHTML = filtered.map((project, i) => `
-    <details class="project-item ${categoryClass[project.category] || ""}">
-      <summary class="project-summary">
-        <span class="project-index">${String(i + 1).padStart(2, "0")}</span>
-        <span class="project-name">${project.title}</span>
-        ${project.featured ? `<span class="meta-pill featured-pill">Featured</span>` : ""}
-        <span class="project-chevron" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </span>
-      </summary>
-      <div class="project-details">
-        <div class="project-meta">
-          <span class="meta-pill cat">${project.category}</span>
-          <span class="meta-pill">${project.date}</span>
+  list.innerHTML = `
+    ${visibleProjects.map((project, i) => `
+      <details class="project-item ${categoryClass[project.category] || ""}">
+        <summary class="project-summary">
+          <span class="project-index">${String(i + 1).padStart(2, "0")}</span>
+          <span class="project-name">${project.title}</span>
+          ${project.featured ? `<span class="meta-pill featured-pill">Featured</span>` : ""}
+          <span class="project-chevron" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </summary>
+        <div class="project-details">
+          <div class="project-meta">
+            <span class="meta-pill cat">${project.category}</span>
+            <span class="meta-pill">${project.date}</span>
+          </div>
+          <p>${project.description}</p>
+          <div class="tags">${createTags(project.tech)}</div>
+          <div class="project-links">
+            ${project.github ? `<a href="${project.github}" target="_blank" rel="noreferrer">GitHub</a>` : ""}
+            ${project.report ? `<a href="${project.report}" target="_blank" rel="noreferrer">Report</a>` : ""}
+          </div>
         </div>
-        <p>${project.description}</p>
-        <div class="tags">${createTags(project.tech)}</div>
-        <div class="project-links">
-          ${project.github ? `<a href="${project.github}" target="_blank" rel="noreferrer">GitHub</a>` : ""}
-          ${project.report ? `<a href="${project.report}" target="_blank" rel="noreferrer">Report</a>` : ""}
-        </div>
-      </div>
-    </details>
-  `).join("");
+      </details>
+    `).join("")}
+
+    ${filtered.length > INITIAL_PROJECT_COUNT ? `
+      <button class="show-more-projects" type="button" id="show-more-projects">
+        <span>${showingAllProjects ? "Show fewer projects" : "Show all projects"}</span>
+        <span>${showingAllProjects ? "Collapse" : `${remainingCount} more`}</span>
+      </button>
+    ` : ""}
+  `;
+
+  const showMoreBtn = document.getElementById("show-more-projects");
+  if (showMoreBtn) {
+    showMoreBtn.addEventListener("click", () => {
+      showingAllProjects = !showingAllProjects;
+      renderProjects(currentProjectFilter);
+
+      if (!showingAllProjects) {
+        document.getElementById("projects").scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  }
 }
 
 function renderPublications() {
@@ -313,10 +342,13 @@ function renderAwards() {
 
 function setupFilters() {
   const buttons = document.querySelectorAll(".filter-btn");
+
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
       buttons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
+
+      showingAllProjects = false;
       renderProjects(btn.dataset.filter);
     });
   });
