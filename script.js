@@ -3,8 +3,8 @@ const projects = [
     title: "DRL-Based Object Detection and Tracking from a UAV",
     category: "Reinforcement Learning",
     date: "Apr 2024 – May 2024",
-    description: "Designed an image-based visual servoing controller for UAV object tracking using DRL algorithms. Evaluated tracking with bounding-box error and linear velocity between the UAV and target. Compared DDPG, TD3, and PER-DDPG, where PER-DDPG achieved the fastest convergence and strongest tracking accuracy.",
-    tech: ["Python", "ROS", "MAVLink", "DDPG", "TD3", "PER-DDPG"],
+    description: "Built a DRL-based UAV object tracking system using YOLOv2 detection, image-based visual servoing, and Gazebo simulation. Designed a controller that converts normalized bounding-box error into UAV velocity commands through MAVLink, then benchmarked 3 continuous-control algorithms. PER-DDPG achieved the fastest convergence, reducing normalized tracking error within 3 to 4 seconds.",
+    tech: ["Python", "ROS", "MAVLink", "YOLOv2", "DDPG", "TD3", "PER-DDPG", "Gazebo"],
     github: "https://github.com/mibrahim76112/DRL-based-Object-Detection-and-Tracking-from-a-UAV",
     featured: true
   },
@@ -21,14 +21,14 @@ const projects = [
     title: "Performance Analysis of Intelligent Reflecting Surfaces in Real-World Environments",
     category: "Wireless Communication",
     date: "Mar 2023 – May 2024",
-    description: "Evaluated IRS-assisted UHF networks in rural, suburban, and urban scenarios. Modeled real building locations and heights as blockage data to analyze coverage probability, spectral efficiency, energy efficiency, rate per unit area, IRS density, BS density, element count, and deployment tradeoffs.",
-    tech: ["Python", "Wireless Simulation", "IRS", "GDAL", "Performance Analysis"]
+    description: "Analyzed IRS-assisted UHF wireless networks across 3 real-world environments using Google Earth building footprints and 3D blockage modeling. Evaluated rate coverage, spectral efficiency, and energy efficiency across 1 to 3 BSs, 1 to 3 IRSs, 512 IRS elements, and up to 300 mobile users. Implemented a DDQN-based IRS phase-shift optimizer that outperformed random phase shifts and multi-arm bandit baselines for CSI-independent spectral-efficiency improvement.",
+    tech: ["Python", "Wireless Simulation", "IRS", "GDAL", "DDQN", "Monte Carlo", "Performance Analysis"]
   },
   {
     title: "WMMSE and Deep Unfolding for Wireless Optimization",
     category: "Wireless Communication",
     date: "2026",
-    description: "Implemented WMMSE-inspired deep unfolding models for beamforming and phase-shift optimization in multi-user wireless systems. Compared conventional optimization with trainable unfolded updates using achievable rate, convergence behavior, robustness, and computational cost.",
+    description: "Implemented WMMSE-inspired deep unfolding and accelerated deep unfolding models for multi-user wireless beamforming optimization. Benchmarked 5 methods, including WMMSE, DNN, mask-aware DNN, deep unfolding, and accelerated deep unfolding, across 4 to 8 users. Achieved the highest sum-rate performance, reaching approximately 15.5 bps/Hz and improving over WMMSE by about 9 to 10% at 8 users.",
     tech: ["Python", "PyTorch", "WMMSE", "Deep Unfolding", "Beamforming"],
     github: "https://github.com/mibrahim76112/WMMSE_Unfolding",
     featured: true
@@ -37,8 +37,8 @@ const projects = [
     title: "NARX Architecture Implementation and Optimization",
     category: "Computer Vision",
     date: "Mar 2024 – Apr 2024",
-    description: "Designed and implemented a Nonlinear Autoregressive Network with Exogenous Inputs for predictive modeling. Applied optimization methods to tune network parameters, improving model accuracy and convergence behavior over baseline configurations.",
-    tech: ["MATLAB", "Simulink", "NARX", "Optimization"],
+    description: "Designed and implemented a NARX neural network in MATLAB/Simulink for nonlinear time-series prediction using exogenous input signals. Applied genetic algorithm-based hyperparameter optimization to tune network structure, delays, and training parameters. Improved prediction accuracy, convergence stability, and forecasting performance compared with baseline NARX settings.",
+    tech: ["MATLAB", "Simulink", "NARX", "Genetic Algorithms", "Optimization"],
     github: "https://github.com/mibrahim76112/NARX-Architecture-Implementatiion-and-Optimization-with-Genetic-Algorithms"
   },
   {
@@ -53,7 +53,7 @@ const projects = [
     title: "Bird Detection and Deterrence Using Audio Signal Processing",
     category: "Computer Vision",
     date: "Apr 2023 – May 2023",
-    description: "Built an automated audio-based bird species detection system. Converted five-second audio clips into spectrograms, applied DSP preprocessing, and trained a CNN over 9,227 samples across six bird species and four non-bird classes. Achieved 82% training accuracy.",
+    description: "Built an audio-based bird detection and deterrence system using DSP preprocessing, spectrogram generation, and CNN-based classification. Processed 9,227 five-second audio samples across 6 bird species and 4 non-bird classes for supervised acoustic event detection. Achieved 82% training accuracy while converting raw audio into spectrogram features for machine learning-based species recognition.",
     tech: ["Machine Learning", "DSP", "CNN", "Spectrograms"],
     github: "https://github.com/mibrahim76112/Bird-Detection-Using-Audio-Speech",
     featured: true
@@ -62,8 +62,8 @@ const projects = [
     title: "Deployment of ML Models on Jetson Nano",
     category: "Computer Vision",
     date: "Jul 2022 – Aug 2022",
-    description: "Implemented and optimized machine learning models for real-time inference on NVIDIA Jetson Nano. Converted trained models to TensorRT for accelerated performance and deployed them for object detection and classification under edge hardware constraints.",
-    tech: ["Jetson Nano", "TensorRT", "YOLOv7", "Edge AI"],
+    description: "Deployed YOLOv7-based object detection models on NVIDIA Jetson Nano for real-time edge AI inference under compute and memory constraints. Converted trained models to TensorRT and applied model optimization techniques, improving inference speed by approximately 30 to 45% compared with baseline PyTorch inference. Tuned latency, throughput, memory usage, and detection reliability for embedded deployment.",
+    tech: ["Jetson Nano", "TensorRT", "YOLOv7", "Edge AI", "Model Optimization"],
     github: "https://github.com/mibrahim76112/YOLOv7-Implemetation-and-Optimization-for-deployment",
     featured: true
   },
@@ -71,8 +71,8 @@ const projects = [
     title: "Comparison of DCGAN and WGAN on Fashion-MNIST",
     category: "Computer Vision",
     date: "2026",
-    description: "Compared two generative adversarial network approaches on Fashion-MNIST to understand image generation quality, adversarial training stability, and architectural differences between DCGAN and WGAN.",
-    tech: ["GANs", "DCGAN", "WGAN", "Jupyter Notebook"],
+    description: "Implemented and compared DCGAN and WGAN architectures on the Fashion-MNIST dataset for generative image modeling. Trained GAN models on 60,000 grayscale fashion images and evaluated image quality, adversarial training stability, and mode-collapse behavior. Observed more stable training dynamics with WGAN compared with DCGAN across repeated training epochs.",
+    tech: ["GANs", "DCGAN", "WGAN", "Fashion-MNIST", "Jupyter Notebook"],
     github: "https://github.com/mibrahim76112/Comparison-of-DCGAN-and-WGAN-on-Fashion-MNSIT-dataset"
   },
   {
@@ -87,16 +87,16 @@ const projects = [
     title: "Residual Vector Quantized VAE",
     category: "Computer Vision",
     date: "2025",
-    description: "Explored representation learning with residual vector quantization and variational autoencoder concepts for compact latent modeling.",
-    tech: ["VAE", "Representation Learning", "Jupyter Notebook"],
+    description: "Implemented a Residual Vector Quantized VAE for MNIST image reconstruction using discrete latent representations and multi-stage residual quantization. Used 2 residual quantizers with 128 codewords each, enabling 14-bit latent encoding and an effective 16,384-code representation without requiring a single large codebook. Reduced quantization error progressively across residual stages, achieving more stable reconstruction than baseline VQ-VAE while using a 128× smaller codebook design than an equivalent 16,384-entry VQ codebook.",
+    tech: ["VAE", "RVQ-VAE", "Residual Quantization", "Discrete Representation", "Jupyter Notebook"],
     github: "https://github.com/mibrahim76112/Residual-Vector-Quantized-Based-VAE"
   },
   {
     title: "Single-Axis PID Controller for Drone Stabilization",
     category: "Robotics and Control",
     date: "Apr 2023 – May 2023",
-    description: "Designed and implemented a single-axis PID controller using Arduino to improve drone stability. Built a feedback loop to regulate motor speed and reject disturbances, then integrated hardware and software components on a working prototype.",
-    tech: ["Arduino", "PID Control", "MATLAB", "Simulink"],
+    description: "Designed and implemented a single-axis PID stabilization controller for a UAV test rig using Arduino Nano, gyro feedback, and 2 BLDC motors. Modeled the closed-loop control system in MATLAB/Simulink, using pitch-rate feedback to regulate motor speed and stabilize the drone arm at a 0° reference angle. Validated the controller on hardware with 2450 kV motors, tuning PID gains to reduce oscillations, balance motor speeds, and improve disturbance rejection.",
+    tech: ["Arduino", "PID Control", "MATLAB", "Simulink", "BLDC Motors"],
     github: "https://github.com/mibrahim76112/Single-axis-PID-Controller-Using-Arduino",
     featured: true
   },
@@ -104,22 +104,22 @@ const projects = [
     title: "Modeling and Simulation of a Drone in Simulink",
     category: "Robotics and Control",
     date: "Apr 2021 – May 2021",
-    description: "Developed a dynamic simulation model of a drone in MATLAB Simulink to analyze flight behavior, actuator models, environmental effects, stability, and control strategies before physical prototyping.",
-    tech: ["MATLAB", "Simulink", "Control Systems", "Drone Modeling"]
+    description: "Developed a 6-DOF drone simulation model in MATLAB/Simulink to analyze translational motion, rotational dynamics, and flight stability before hardware prototyping. Modeled 4 rotor inputs, actuator response, thrust generation, and attitude behavior across roll, pitch, and yaw control axes. Evaluated control-system behavior under simulated disturbances, improving understanding of stability, response time, and UAV flight dynamics.",
+    tech: ["MATLAB", "Simulink", "Control Systems", "Drone Modeling", "6-DOF Simulation"]
   },
   {
     title: "Autonomous UAV Pesticide Spraying System",
     category: "Robotics and Control",
     date: "Mar 2022 – Sep 2022",
-    description: "Contributed as an electrical systems member in a multidisciplinary team building an autonomous hexacopter for targeted pesticide spraying. Integrated sensors, control electronics, and power systems for agricultural automation during UAS Challenge 2022.",
-    tech: ["UAVs", "Sensors", "Power Systems", "Hardware"]
+    description: "Contributed to the design and integration of an autonomous hexacopter pesticide spraying system for targeted agricultural automation during UAS Challenge Pakistan 2022. Integrated onboard sensors, control electronics, power distribution, and payload hardware across a 6-rotor UAV platform for autonomous spraying operations. Supported field testing and electrical debugging of UAV subsystems, improving hardware reliability for payload delivery, telemetry, and mission execution.",
+    tech: ["UAVs", "Sensors", "Power Systems", "Hardware", "Hexacopter"]
   },
   {
     title: "RISC-V Processor Design and FPGA Implementation",
     category: "Embedded and Hardware",
     date: "May 2022 – Jun 2022",
-    description: "Designed a RISC-V processor using Verilog and tested it on an FPGA board. Implemented core components including the ALU, registers, program counter, and instruction-level logic.",
-    tech: ["Verilog", "FPGA", "RISC-V", "Digital Design"],
+    description: "Designed a 32-bit RISC-V processor in Verilog with support for 37 instructions across R-type, I-type, B-type, J-type, S-type, and U-type formats. Implemented core processor modules including the ALU, register file, program counter, instruction memory, data memory, immediate generator, branch comparator, and control logic. Verified instruction execution in Xilinx Vivado 2018 using testbenches and assembly-level programs, including GCD computation and prime number generation from 1 to 100.",
+    tech: ["Verilog", "FPGA", "RISC-V", "Digital Design", "Xilinx Vivado"],
     github: "https://github.com/mibrahim76112/Implementation-of-Risc-V-Verilog-Code",
     featured: true
   },
@@ -127,37 +127,37 @@ const projects = [
     title: "Snake Game Using Arduino",
     category: "Embedded and Hardware",
     date: "Mar 2022",
-    description: "Built a classic Snake game on Arduino using an LED matrix display and custom input controls. Programmed game movement, collision detection, scoring, and memory-conscious embedded logic.",
-    tech: ["Arduino", "Embedded Systems", "LED Matrix"]
+    description: "Built a classic Snake game on Arduino using an 8×8 LED matrix display and custom input controls for real-time gameplay. Programmed embedded game logic including movement control, food generation, collision detection, score tracking, and game reset behavior. Optimized the game loop for memory-constrained Arduino hardware, managing display updates and input response with low-latency embedded logic.",
+    tech: ["Arduino", "Embedded Systems", "LED Matrix", "Game Logic"]
   },
   {
     title: "Digital Smart Room Automation System",
     category: "Embedded and Hardware",
     date: "Nov 2021 – Dec 2021",
-    description: "Developed a standalone digital room automation system using timer ICs, arithmetic circuits, and combinational logic to automate classroom scheduling, programmable alarms, and timing control.",
-    tech: ["Logic Design", "Timer ICs", "Digital Circuits"]
+    description: "Designed a standalone digital room automation system using timer ICs, arithmetic circuits, and combinational logic for classroom scheduling and alarm control. Implemented programmable timing logic for automated alarms, class-period transitions, and room-control events without using a microcontroller. Built and tested hardware-level digital logic using counters, comparators, and timing circuits to support reliable scheduled automation.",
+    tech: ["Logic Design", "Timer ICs", "Digital Circuits", "Combinational Logic"]
   },
   {
     title: "TCP Traffic and Session Analysis Using Wireshark",
     category: "Networking and Software",
     date: "Oct 2023 – Dec 2023",
-    description: "Captured and analyzed TCP/IP client-server traffic in Wireshark. Verified TCP usage through protocol hierarchy statistics, identified endpoints, detected four TCP sessions, and quantified traffic using packet rate and throughput analysis.",
-    tech: ["Wireshark", "TCP/IP", "Computer Networking"]
+    description: "Captured and analyzed 20 minutes of online game client-server traffic using Wireshark to study TCP behavior, session creation, and application-layer traffic patterns. Identified 4 TCP sessions and verified protocol usage through packet capture, protocol hierarchy statistics, and sequence number analysis. Measured an average packet arrival rate of 142.7 packets/sec and analyzed throughput, connection continuity, and packet capture rate over time.",
+    tech: ["Wireshark", "TCP/IP", "Computer Networking", "Packet Analysis"]
   },
   {
     title: "Car Management System",
     category: "Networking and Software",
     date: "Nov 2021 – Dec 2021",
-    description: "Built a C++ object-oriented application for driver registration, car data storage, and transaction history management using file handling and structured program design.",
-    tech: ["C++", "OOP", "File Handling"],
+    description: "Built a C++ object-oriented car management system for driver registration, vehicle records, and transaction history tracking. Implemented modular workflows for registration, car data storage, search/update operations, transaction logging, and file-based persistence. Applied OOP principles such as classes, encapsulation, structured file handling, and menu-driven program design.",
+    tech: ["C++", "OOP", "File Handling", "Data Management"],
     github: "https://github.com/mibrahim76112/Car-Management-System"
   },
   {
     title: "Brick Car Racing Game",
     category: "Networking and Software",
     date: "Dec 2020 – Jan 2021",
-    description: "Developed a terminal-based brick car racing game in C++ with increasing difficulty, obstacle generation, scoring, and real-time keyboard control.",
-    tech: ["C++", "Game Logic", "Terminal I/O"],
+    description: "Developed a terminal-based car racing game in C++ with real-time keyboard input, obstacle generation, scoring, and difficulty progression. Implemented 3 gameplay systems, including collision detection, dynamic obstacle movement, and score-based speed scaling. Designed memory-efficient game logic using console rendering, loops, condition handling, and structured C++ programming.",
+    tech: ["C++", "Game Logic", "Terminal I/O", "Real-Time Input"],
     github: "https://github.com/mibrahim76112/Brick-Car-Racing-Game"
   }
 ];
@@ -242,34 +242,63 @@ function createTags(tags) {
   return tags.map(t => `<span class="tag">${t}</span>`).join("");
 }
 
+let showingAllProjects = false;
+let currentProjectFilter = "all";
+const INITIAL_PROJECT_COUNT = 4;
+
 function renderProjects(filter = "all") {
+  currentProjectFilter = filter;
+
   const list = document.getElementById("projects-list");
   const filtered = filter === "all" ? projects : projects.filter(p => p.category === filter);
+  const visibleProjects = showingAllProjects ? filtered : filtered.slice(0, INITIAL_PROJECT_COUNT);
+  const remainingCount = Math.max(filtered.length - INITIAL_PROJECT_COUNT, 0);
 
-  list.innerHTML = filtered.map((project, i) => `
-    <details class="project-item ${categoryClass[project.category] || ""}">
-      <summary class="project-summary">
-        <span class="project-index">${String(i + 1).padStart(2, "0")}</span>
-        <span class="project-name">${project.title}</span>
-        ${project.featured ? `<span class="meta-pill featured-pill">Featured</span>` : ""}
-        <span class="project-chevron" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </span>
-      </summary>
-      <div class="project-details">
-        <div class="project-meta">
-          <span class="meta-pill cat">${project.category}</span>
-          <span class="meta-pill">${project.date}</span>
+  list.innerHTML = `
+    ${visibleProjects.map((project, i) => `
+      <details class="project-item ${categoryClass[project.category] || ""}">
+        <summary class="project-summary">
+          <span class="project-index">${String(i + 1).padStart(2, "0")}</span>
+          <span class="project-name">${project.title}</span>
+          ${project.featured ? `<span class="meta-pill featured-pill">Featured</span>` : ""}
+          <span class="project-chevron" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </summary>
+        <div class="project-details">
+          <div class="project-meta">
+            <span class="meta-pill cat">${project.category}</span>
+            <span class="meta-pill">${project.date}</span>
+          </div>
+          <p>${project.description}</p>
+          <div class="tags">${createTags(project.tech)}</div>
+          <div class="project-links">
+            ${project.github ? `<a href="${project.github}" target="_blank" rel="noreferrer">GitHub</a>` : ""}
+            ${project.report ? `<a href="${project.report}" target="_blank" rel="noreferrer">Report</a>` : ""}
+          </div>
         </div>
-        <p>${project.description}</p>
-        <div class="tags">${createTags(project.tech)}</div>
-        <div class="project-links">
-          ${project.github ? `<a href="${project.github}" target="_blank" rel="noreferrer">GitHub</a>` : ""}
-          ${project.report ? `<a href="${project.report}" target="_blank" rel="noreferrer">Report</a>` : ""}
-        </div>
-      </div>
-    </details>
-  `).join("");
+      </details>
+    `).join("")}
+
+    ${filtered.length > INITIAL_PROJECT_COUNT ? `
+      <button class="show-more-projects" type="button" id="show-more-projects">
+        <span>${showingAllProjects ? "Show fewer projects" : "Show all projects"}</span>
+        <span>${showingAllProjects ? "Collapse" : `${remainingCount} more`}</span>
+      </button>
+    ` : ""}
+  `;
+
+  const showMoreBtn = document.getElementById("show-more-projects");
+  if (showMoreBtn) {
+    showMoreBtn.addEventListener("click", () => {
+      showingAllProjects = !showingAllProjects;
+      renderProjects(currentProjectFilter);
+
+      if (!showingAllProjects) {
+        document.getElementById("projects").scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  }
 }
 
 function renderPublications() {
@@ -313,10 +342,13 @@ function renderAwards() {
 
 function setupFilters() {
   const buttons = document.querySelectorAll(".filter-btn");
+
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
       buttons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
+
+      showingAllProjects = false;
       renderProjects(btn.dataset.filter);
     });
   });
@@ -366,6 +398,16 @@ function setupScrollSpy() {
 }
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderProjects();
+  renderPublications();
+  renderSkills();
+  renderAwards();
+  setupFilters();
+  setupNav();
+  setupScrollSpy();
+});
 renderProjects();
 renderPublications();
 renderSkills();
