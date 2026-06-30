@@ -605,14 +605,11 @@ h4 { font-size: 1rem; }
 }
 
 .award-card {
-  display: flex;
-  align-items: flex-start;
-  gap: .85rem;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 1.15rem 1.25rem;
   box-shadow: var(--shadow-sm);
+  overflow: hidden;
   transition: box-shadow var(--t), transform var(--t), border-color var(--t);
 }
 .award-card:hover {
@@ -620,6 +617,20 @@ h4 { font-size: 1rem; }
   transform: translateY(-2px);
   border-color: var(--line-strong);
 }
+.award-card[open] { border-color: var(--tag-border); }
+
+.award-summary {
+  display: flex;
+  align-items: flex-start;
+  gap: .85rem;
+  padding: 1.15rem 1.25rem;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  transition: background var(--t);
+}
+.award-summary::-webkit-details-marker { display: none; }
+.award-summary:hover { background: var(--surface-2); }
 
 .award-icon {
   flex-shrink: 0;
@@ -650,19 +661,30 @@ h4 { font-size: 1rem; }
   font-weight: 600;
 }
 
-.award-desc {
-  margin: .5rem 0 0;
-  font-size: .82rem;
-  line-height: 1.55;
-  color: var(--text-2);
-}
-
 .award-index {
   flex-shrink: 0;
   font-family: "JetBrains Mono", monospace;
   font-size: .68rem;
   color: var(--muted);
   opacity: .6;
+}
+
+.award-chevron {
+  flex-shrink: 0;
+  color: var(--muted);
+  transition: transform var(--t), color var(--t);
+}
+.award-card[open] .award-chevron { transform: rotate(180deg); color: var(--primary); }
+
+.award-desc {
+  margin: 0 1.25rem;
+  padding: .85rem 0 1.15rem;
+  padding-left: calc(32px + .85rem);
+  border-top: 1px solid var(--line);
+  font-size: .82rem;
+  line-height: 1.55;
+  color: var(--text-2);
+  animation: slide-down .18s ease;
 }
 
 /* ─── About ──────────────────────────────────────────── */
