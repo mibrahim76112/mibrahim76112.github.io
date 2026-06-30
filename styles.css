@@ -646,8 +646,15 @@ h4 { font-size: 1rem; }
 .award-meta {
   margin: 0;
   font-size: .78rem;
-  color: var(--muted);
-  font-weight: 500;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.award-desc {
+  margin: .5rem 0 0;
+  font-size: .82rem;
+  line-height: 1.55;
+  color: var(--text-2);
 }
 
 .award-index {
