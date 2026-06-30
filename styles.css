@@ -314,27 +314,58 @@ h4 { font-size: 1rem; }
 .hero-identity {
   display: flex;
   align-items: center;
-  gap: 1.1rem;
+  gap: 1.4rem;
   margin-bottom: .25rem;
 }
 
 .hero-avatar-wrap {
+  position: relative;
   flex-shrink: 0;
   padding: 3px;
   border-radius: 50%;
-  background: var(--grad);
-  box-shadow: 0 0 0 1px var(--line), 0 14px 40px var(--primary-glow);
+  background: conic-gradient(from 140deg, var(--primary), var(--accent), var(--primary-2), var(--primary));
+  box-shadow:
+    0 0 0 1px var(--line-strong),
+    0 10px 30px rgba(0,0,0,.45),
+    0 0 36px var(--primary-glow);
 }
 
 .hero-avatar {
   display: block;
-  width: 84px;
-  height: 84px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center 12%;
-  border: 3px solid var(--bg);
+  object-position: center 18%;
+  border: 4px solid var(--bg);
   background: var(--surface-soft);
+}
+
+/* "available" status dot */
+.hero-status {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #28c840;
+  border: 4px solid var(--bg);
+  box-shadow: 0 0 0 1px rgba(0,0,0,.25);
+}
+.hero-status::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid #28c840;
+  opacity: .6;
+  animation: status-pulse 2.4s ease-out infinite;
+}
+
+@keyframes status-pulse {
+  0%   { transform: scale(.7); opacity: .7; }
+  100% { transform: scale(1.6); opacity: 0; }
 }
 
 .hero-identity-text { flex: 1; min-width: 0; }
@@ -431,6 +462,8 @@ h4 { font-size: 1rem; }
 
 .hero-content h1 {
   margin-bottom: 0;
+  font-size: clamp(2.1rem, 4vw, 3rem);
+  letter-spacing: -.035em;
   background: linear-gradient(120deg, var(--text) 35%, var(--primary) 75%, var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -730,6 +763,70 @@ h4 { font-size: 1rem; }
 
 .experience-card ul { margin: 0; }
 .experience-card li { color: var(--text-2); }
+
+/* role label next to company name */
+.experience-title .exp-role {
+  font-weight: 600;
+  font-size: .92rem;
+  color: var(--muted);
+}
+.experience-title .exp-role::before {
+  content: "·";
+  margin: 0 .5rem;
+  color: var(--line-strong);
+}
+
+/* project sub-blocks */
+.exp-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1.05rem;
+  margin-top: 1.25rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--line);
+}
+
+.exp-project {
+  padding-left: 1.05rem;
+  border-left: 2px solid var(--line-strong);
+  transition: border-color var(--t);
+}
+.experience-card:hover .exp-project { border-left-color: color-mix(in srgb, var(--primary) 45%, var(--line-strong)); }
+
+.exp-project-head {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  flex-wrap: wrap;
+  margin-bottom: .35rem;
+}
+
+.exp-tag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: .6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--primary);
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  padding: .15rem .45rem;
+  border-radius: 5px;
+}
+
+.exp-project-name {
+  font-size: .95rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.exp-project-desc {
+  margin: 0;
+  color: var(--text-2);
+  font-size: .875rem;
+  line-height: 1.6;
+}
 
 /* ─── Publications ───────────────────────────────────── */
 .publication-list {
@@ -1238,7 +1335,7 @@ h4 { font-size: 1rem; }
 }
 
 @media (max-width: 860px) {
-  .hero-avatar { width: 76px; height: 76px; }
+  .hero-avatar { width: 104px; height: 104px; }
 
   .contact-card {
     grid-template-columns: 1fr;

@@ -221,12 +221,36 @@ const skills = [
 ];
 
 const awards = [
-  { title: "University of Manitoba Graduate Fellowship", org: "University of Manitoba" },
-  { title: "International Graduate Student Entrance Scholarship", org: "University of Manitoba" },
-  { title: "Research Completion Award", org: "University of Manitoba" },
-  { title: "NUST Academic Merit Scholarship", org: "NUST", year: "2021 & 2023" },
-  { title: "NUST High Achiever Award, Silver Medal", org: "NUST" },
-  { title: "Winner, UAS Challenge Pakistan 2022", org: "Team Burraq" }
+  {
+    title: "University of Manitoba Graduate Fellowship",
+    org: "University of Manitoba",
+    desc: "Competitive fellowship awarded to full-time master's and PhD students who demonstrate superior academic achievement, intellectual ability, and research potential."
+  },
+  {
+    title: "International Graduate Student Entrance Scholarship",
+    org: "University of Manitoba",
+    desc: "Recognizes outstanding international graduate students entering a master's program, awarded for academic excellence and full-time graduate enrollment."
+  },
+  {
+    title: "Research Completion Award",
+    org: "University of Manitoba",
+    desc: "Graduate research award supporting thesis-based students with strong academic performance, scholarly potential, and progress toward thesis completion."
+  },
+  {
+    title: "Dean's Honor List",
+    org: "NUST",
+    desc: "Semester-based academic recognition awarded to top-performing undergraduate students for outstanding academic achievement."
+  },
+  {
+    title: "NUST High Achiever Award, Silver Medal",
+    org: "NUST",
+    desc: "Awarded by the Student Affairs Directorate to recognize major student achievements — received in the national category for winning a national-level engineering competition."
+  },
+  {
+    title: "Winner, UAS Challenge Pakistan 2022",
+    org: "Team Burraq",
+    desc: "Won a national UAV engineering competition for an autonomous agricultural pesticide-spraying UAV, covering flight integration, payload design, and field demonstration."
+  }
 ];
 
 const categoryClass = {
@@ -334,6 +358,7 @@ function renderAwards() {
       <div class="award-body">
         <h3>${award.title}</h3>
         <p class="award-meta">${award.org}${award.year ? ` · ${award.year}` : ""}</p>
+        ${award.desc ? `<p class="award-desc">${award.desc}</p>` : ""}
       </div>
       <span class="award-index">${String(i + 1).padStart(2, "0")}</span>
     </article>

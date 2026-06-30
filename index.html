@@ -68,6 +68,7 @@
                 loading="eager"
                 onerror="this.onerror=null;this.src='./assets/profile.jpg';"
               />
+              <span class="hero-status" title="Open to opportunities" aria-hidden="true"></span>
             </div>
             <div class="hero-identity-text">
               <p class="eyebrow">M.Sc. Electrical &amp; Computer Engineering · University of Manitoba</p>
@@ -142,80 +143,83 @@
         <div class="section-heading">
           <p class="section-label">Experience</p>
           <h2>Research &amp; engineering roles</h2>
-          <p class="section-sub">Academic research at WiCoNS Lab and IPT Lab, plus embedded ML and UAV engineering experience.</p>
+          <p class="section-sub">Research and engineering roles spanning wireless systems, edge AI, and UAV platforms — organized by project.</p>
         </div>
 
-        <div class="experience-group">
-          <h3 class="experience-group-title">Research Experience</h3>
-          <div class="experience-list">
-            <article class="experience-card">
-              <div class="experience-top">
-                <div>
-                  <h4 class="experience-title">Graduate Research Assistant</h4>
-                  <p class="experience-org">Wireless Communication, Networking and Services Lab · University of Manitoba</p>
-                  <p class="experience-location">Winnipeg, Canada</p>
-                </div>
-                <span class="experience-date">Sep 2024 – Present</span>
+        <div class="experience-list">
+          <article class="experience-card">
+            <div class="experience-top">
+              <div>
+                <h4 class="experience-title">WiCoNS <span class="exp-role">Research Assistant</span></h4>
+                <p class="experience-org">NSERC-Funded Research Projects</p>
+                <p class="experience-location">Winnipeg, Canada</p>
               </div>
-              <ul>
-                <li>Developed mathematical system models for stacked intelligent metasurface-assisted downlink transmission, including multi-user channels, shared SIM phase shifts, transmit beamforming, interference modeling, and achievable-rate formulation.</li>
-                <li>Implemented deep unfolding methods by mapping iterative wireless optimization updates into trainable layers and evaluating convergence speed, sum-rate performance, robustness, and computational cost.</li>
-                <li>Developed DRL-based methods for communication graph selection and consensus behavior in multi-agent systems, with emphasis on reducing communication cost while maintaining stable convergence.</li>
-                <li>Worked with 3GPP-inspired wireless channel models, including path loss, fading, antenna effects, beamforming, Doppler, and SINR-based performance evaluation.</li>
-              </ul>
-            </article>
+              <span class="experience-date">Sep 2024 – Present</span>
+            </div>
+            <div class="exp-projects">
+              <div class="exp-project">
+                <div class="exp-project-head">
+                  <span class="exp-tag">Project</span>
+                  <h5 class="exp-project-name">Wireless System Optimization and Validation</h5>
+                </div>
+                <p class="exp-project-desc">Modeled multi-user wireless systems and evaluated optimization algorithms for beamforming, phase-shift design, achievable-rate maximization, convergence behavior, numerical validation, parameter sensitivity, and baseline comparison.</p>
+              </div>
+              <div class="exp-project">
+                <div class="exp-project-head">
+                  <span class="exp-tag">Project</span>
+                  <h5 class="exp-project-name">Deep RL for Networked Wireless Systems</h5>
+                </div>
+                <p class="exp-project-desc">Proposed a hierarchical deep reinforcement learning approach for communication-graph selection in multi-agent consensus systems, analyzing convergence stability, communication overhead, robustness, and performance tradeoffs.</p>
+              </div>
+            </div>
+          </article>
 
-            <article class="experience-card">
-              <div class="experience-top">
-                <div>
-                  <h4 class="experience-title">Undergraduate Research Assistant</h4>
-                  <p class="experience-org">Information Processing and Transmission Lab · NUST</p>
-                  <p class="experience-location">Islamabad, Pakistan</p>
-                </div>
-                <span class="experience-date">Jun 2023 – May 2024</span>
+          <article class="experience-card">
+            <div class="experience-top">
+              <div>
+                <h4 class="experience-title">ESDAC <span class="exp-role">Embedded ML Intern</span></h4>
+                <p class="experience-org">Embedded AI and Edge Deployment</p>
+                <p class="experience-location">Islamabad, Pakistan</p>
               </div>
-              <ul>
-                <li>Built Python simulation scripts for wireless resource allocation and intelligent reflecting surface-assisted communication networks.</li>
-                <li>Used GDAL-based 3D environment data to compare wireless network behavior across urban, suburban, and rural deployment settings.</li>
-                <li>Tested DDQN-based radio parameter selection for dynamic multi-user scenarios and compared learning-based results with baseline approaches.</li>
-              </ul>
-            </article>
-          </div>
-        </div>
+              <span class="experience-date">May 2022 – Aug 2022</span>
+            </div>
+            <div class="exp-projects">
+              <div class="exp-project">
+                <div class="exp-project-head">
+                  <span class="exp-tag">Project</span>
+                  <h5 class="exp-project-name">Jetson Nano Edge AI</h5>
+                </div>
+                <p class="exp-project-desc">Deployed real-time object detection and classification models on NVIDIA Jetson Nano under Linux-based hardware constraints. Optimized models with TensorRT, improving inference efficiency by 25–40% while analyzing latency, memory limits, and deployment tradeoffs.</p>
+              </div>
+            </div>
+          </article>
 
-        <div class="experience-group">
-          <h3 class="experience-group-title">Engineering Experience</h3>
-          <div class="experience-list">
-            <article class="experience-card">
-              <div class="experience-top">
-                <div>
-                  <h4 class="experience-title">Embedded ML Research Intern</h4>
-                  <p class="experience-org">Electronic System and Automation Centre Lab (ESDAC)</p>
-                  <p class="experience-location">Islamabad, Pakistan</p>
-                </div>
-                <span class="experience-date">May 2022 – Aug 2022</span>
+          <article class="experience-card">
+            <div class="experience-top">
+              <div>
+                <h4 class="experience-title">Burraq <span class="exp-role">AI &amp; Electrical Engineer</span></h4>
+                <p class="experience-org">Student-Led UAV Engineering Team</p>
+                <p class="experience-location">Islamabad, Pakistan</p>
               </div>
-              <ul>
-                <li>Developed a real-time fringe classification pipeline on NVIDIA Jetson Nano using embedded computer vision and object detection models for edge AI inference.</li>
-                <li>Optimized model weights with TensorRT acceleration and pruning, improving inference speed by 25 to 40% and reducing model complexity by 20 to 35%.</li>
-                <li>Performed on-device testing and deployment under hardware constraints, tuning latency, FPS, memory usage, and inference reliability for real-time embedded ML applications.</li>              </ul>
-            </article>
-
-            <article class="experience-card">
-              <div class="experience-top">
-                <div>
-                  <h4 class="experience-title">AI and Electrical Systems Member</h4>
-                  <p class="experience-org">Team Burraq · Student-Led UAV Competition Team</p>
-                  <p class="experience-location">Islamabad, Pakistan</p>
+              <span class="experience-date">Mar 2022 – Dec 2023</span>
+            </div>
+            <div class="exp-projects">
+              <div class="exp-project">
+                <div class="exp-project-head">
+                  <span class="exp-tag">Project</span>
+                  <h5 class="exp-project-name">Autonomous Pesticide Spraying UAV</h5>
                 </div>
-                <span class="experience-date">Mar 2022 – Dec 2023</span>
+                <p class="exp-project-desc">Worked on electrical and embedded-system integration for a targeted pesticide-spraying UAV, including sensor interfaces, camera integration, power electronics, telemetry review, and field-test debugging.</p>
               </div>
-              <ul>
-                <li>Developed autonomous UAV payload delivery and agricultural spraying subsystems as part of a student-led UAV competition team, contributing to the winning UAS Challenge Pakistan 2022 project.</li>
-                <li>Integrated sensors, cameras, and embedded hardware interfaces including UART, I2C, GPIO, and ADC to support UAV perception, telemetry, and onboard control.</li>
-                <li>Trained and tested a computer vision model for drowning person detection, achieving 95% classification accuracy for UAV-based rescue and surveillance scenarios.</li>              </ul>
-            </article>
-          </div>
+              <div class="exp-project">
+                <div class="exp-project-head">
+                  <span class="exp-tag">Project</span>
+                  <h5 class="exp-project-name">Drowning Detection &amp; Life-Jacket Delivery UAV</h5>
+                </div>
+                <p class="exp-project-desc">Worked on UAV system integration for a vision-assisted drowning detection and life-jacket delivery prototype using cameras, embedded controllers, telemetry logs, sensor readings, UART, I2C, GPIO, and ADC.</p>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
