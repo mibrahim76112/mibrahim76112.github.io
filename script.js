@@ -244,7 +244,10 @@ function createTags(tags) {
 
 let showingAllProjects = false;
 let currentProjectFilter = "all";
-const INITIAL_PROJECT_COUNT = 4;
+const INITIAL_PROJECT_COUNT = 6;
+const MAX_PROJECT_TAGS = 6;
+
+const githubIcon = `<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>`;
 
 function renderProjects(filter = "all") {
   currentProjectFilter = filter;
@@ -255,30 +258,27 @@ function renderProjects(filter = "all") {
   const remainingCount = Math.max(filtered.length - INITIAL_PROJECT_COUNT, 0);
 
   list.innerHTML = `
-    ${visibleProjects.map((project, i) => `
-      <details class="project-item ${categoryClass[project.category] || ""}">
-        <summary class="project-summary">
+    ${visibleProjects.map((project, i) => {
+      const extra = project.tech.length - MAX_PROJECT_TAGS;
+      const tagsHTML = createTags(project.tech.slice(0, MAX_PROJECT_TAGS)) +
+        (extra > 0 ? `<span class="tag-more">+${extra}</span>` : "");
+      return `
+      <article class="project-card ${categoryClass[project.category] || ""}">
+        <div class="project-card-top">
           <span class="project-index">${String(i + 1).padStart(2, "0")}</span>
-          <span class="project-name">${project.title}</span>
-          ${project.featured ? `<span class="meta-pill featured-pill">Featured</span>` : ""}
-          <span class="project-chevron" aria-hidden="true">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </span>
-        </summary>
-        <div class="project-details">
-          <div class="project-meta">
-            <span class="meta-pill cat">${project.category}</span>
-            <span class="meta-pill">${project.date}</span>
-          </div>
-          <p>${project.description}</p>
-          <div class="tags">${createTags(project.tech)}</div>
-          <div class="project-links">
-            ${project.github ? `<a href="${project.github}" target="_blank" rel="noreferrer">GitHub</a>` : ""}
-            ${project.report ? `<a href="${project.report}" target="_blank" rel="noreferrer">Report</a>` : ""}
-          </div>
+          <span class="meta-pill cat">${project.category}</span>
+          ${project.featured ? `<span class="meta-pill featured-pill">★ Featured</span>` : ""}
         </div>
-      </details>
-    `).join("")}
+        <h3 class="project-card-title">${project.title}</h3>
+        <p class="project-card-desc">${project.description}</p>
+        <div class="tags">${tagsHTML}</div>
+        ${(project.github || project.report) ? `
+        <div class="project-card-links">
+          ${project.github ? `<a href="${project.github}" target="_blank" rel="noreferrer">${githubIcon} Code</a>` : ""}
+          ${project.report ? `<a href="${project.report}" target="_blank" rel="noreferrer">Report →</a>` : ""}
+        </div>` : ""}
+      </article>`;
+    }).join("")}
 
     ${filtered.length > INITIAL_PROJECT_COUNT ? `
       <button class="show-more-projects" type="button" id="show-more-projects">
@@ -396,7 +396,7 @@ function setupTheme() {
 function setupReveal() {
   const targets = document.querySelectorAll(
     ".section-heading, .hero-content > *, .experience-card, .publication-card, " +
-    ".project-item, .skill-card, .award-card, .contact-card"
+    ".project-card, .skill-card, .award-card, .contact-card"
   );
 
   if (!("IntersectionObserver" in window)) {
