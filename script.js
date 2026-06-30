@@ -379,6 +379,45 @@ function setupNav() {
   });
 }
 
+// Light / dark theme toggle (initial theme is set inline in <head>)
+function setupTheme() {
+  const root = document.documentElement;
+  const btn = document.getElementById("theme-toggle");
+  if (!btn) return;
+
+  btn.addEventListener("click", () => {
+    const next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  });
+}
+
+// Reveal elements as they scroll into view
+function setupReveal() {
+  const targets = document.querySelectorAll(
+    ".section-heading, .hero-content > *, .experience-card, .publication-card, " +
+    ".project-item, .skill-card, .award-card, .contact-card"
+  );
+
+  if (!("IntersectionObserver" in window)) {
+    targets.forEach(el => el.classList.add("visible"));
+    return;
+  }
+
+  targets.forEach(el => el.classList.add("reveal"));
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: "0px 0px -10% 0px", threshold: 0.05 });
+
+  targets.forEach(el => observer.observe(el));
+}
+
 // Active nav link on scroll
 function setupScrollSpy() {
   const sections = document.querySelectorAll("section[id]");
@@ -406,12 +445,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderAwards();
   setupFilters();
   setupNav();
+  setupTheme();
   setupScrollSpy();
+  setupReveal();
 });
-renderProjects();
-renderPublications();
-renderSkills();
-renderAwards();
-setupFilters();
-setupNav();
-setupScrollSpy();
